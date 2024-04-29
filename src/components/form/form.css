@@ -1,0 +1,24 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.form .title {
+    font-weight: var(--inter-bold);
+    font-size: 3rem;
+    color: var(--black);
+}
+.form .desc {
+    color: var(--gray);
+    font-size: 1.5rem;
+    max-width: 30rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+@media(min-width: 850px) {
+    .form {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+}

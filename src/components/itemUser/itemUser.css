@@ -1,0 +1,50 @@
+.item-user {
+    list-style: none;
+    width: 100%;
+    height: 6rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 5rem 1fr 6rem;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+.item-user:hover {
+    background-color: #f2f2f2;
+}
+.item-user .box-avatar {
+    display: flex;
+    align-items: center;
+    width: 5rem;
+    height: 6rem;   
+}
+.item-user .info {
+    width: 100%;
+    height: 5rem;   
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.item-user .info .fullname {
+    font-size: 1.3rem;
+    align-self: center;
+    justify-self: start;
+}
+.item-user .info .email {
+    font-size: 1rem;
+    align-self: center;
+    color: var(--gray);
+    justify-self: start;
+}
+.item-user .btn-add {
+    background: none;
+    border: none;
+    color: var(--green);
+    font-weight: var(--inter-bold);
+    font-size: 1rem;
+    cursor: pointer;
+}
+.item-user .message-added {
+    color: var(--black);
+    font-size: 1rem;
+    font-weight: var(--inter-bold);
+}

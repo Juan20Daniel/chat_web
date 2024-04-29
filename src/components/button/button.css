@@ -1,0 +1,38 @@
+.btn-submit {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    border: none;
+    border-radius: 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.color-success {
+    background-color: var(--green);
+}
+.color-success:active {
+    background-color: var(--green-active);
+}
+.color-error {
+    background-color: var(--red-err);
+}
+.color-error:active {
+    background-color: var(--red-err-active);
+}
+.color-confirm {
+    background-color: var(--yellow);
+}
+.color-confirm:active {
+    background-color: var(--yellow-active);
+}
+.color-cancel {
+    color: var(--black);
+    background-color: var(--light-gray);
+}
+.color-cancel:active {
+    color: var(--black);
+    background-color: var(--white);
+}

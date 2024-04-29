@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { routes } from './Routes';
+import { CentralAlertProvider } from './context/alertContext/CentralAlertProvider';
+import LoadPage from './components/loadPage/LoadPage';
+import { ChatProvider } from './context/chatContext/ChatProvider';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CentralAlertProvider>
+      <ChatProvider>
+        <Suspense fallback={<LoadPage />}>
+          <BrowserRouter>
+            <Routes>
+              {routes.map(route => (
+                <Route key={route.path} path={route.path} element={<route.Component />} />
+              ))}
+              <Route path='/*' element={<Navigate to={`/${routes[0].path}`} replace/>} />
+            </Routes>
+          </BrowserRouter>
+        </Suspense>
+      </ChatProvider>
+    </CentralAlertProvider>
   );
 }
 

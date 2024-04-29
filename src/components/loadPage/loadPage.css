@@ -1,0 +1,12 @@
+.load-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.load-page .text {
+    font-size: 1.5rem;
+}

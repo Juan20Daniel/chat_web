@@ -1,0 +1,27 @@
+.not-results {
+    height: calc(100% - 5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.not-results .ilustration {
+    width: 20rem;
+    height: 20rem;
+    object-fit: contain;
+}
+.not-results .message {
+    width: 23rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.not-results .box-btn {
+    width: 16rem;
+    height: 3.5rem;
+    margin-top: 1rem;
+}
+.not-results .box-btn button {
+    border-radius: 5rem;
+    font-size: 1.2rem;
+}

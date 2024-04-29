@@ -1,0 +1,13 @@
+.index-layout {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 60rem;
+    background-color: var(--geen-font);
+}
+@media(min-width: 700px) {
+    .index-layout {
+        display: grid;
+        grid-template-columns: 37.5rem 1fr;
+    }
+} 

@@ -1,0 +1,22 @@
+.slider {
+    position: relative;
+    width: 100%;
+    min-width: 30rem;
+    max-width: 50rem;
+    height: 100%;
+    background: var(--white);
+    box-shadow: 0 0 0.7rem var(--black-transparent);
+    padding: 1rem 0;
+    display: none;
+    grid-template-rows: 12rem 1fr;
+    z-index: 1;
+}
+.hide-slider {
+    display: grid;
+}
+@media(min-width: 700px) {
+    .slider {
+        display: grid;
+        width: 35rem;
+    }
+}
