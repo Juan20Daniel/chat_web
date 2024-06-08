@@ -1,4 +1,4 @@
-import moment from "moment"
+import moment from "moment";
 export const checkExpireToken = (expToken) => {
     const now = moment().unix();
     return now > expToken;

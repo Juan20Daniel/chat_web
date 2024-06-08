@@ -12,6 +12,7 @@ const Login = () => {
        <InputGroup
         type='email'
         placeholder='Correo'
+        name='email'
         camp={email}
         getValue={setEmail}
         exp={/^[a-zA-Z0-9.,_-]{5,30}@[a-zA-Z0-9-_]{3,15}\.[a-zA-Z.]{3,10}$/g}
@@ -21,6 +22,7 @@ const Login = () => {
       <InputGroup
         type='password'
         placeholder='Contraseña'
+        name='password'
         camp={password}
         getValue={setPassword}
         exp={/^.{5,40}$/g}
