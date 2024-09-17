@@ -36,3 +36,9 @@
     color: var(--black);
     background-color: var(--white);
 }
+.disable-btn,
+.disable-btn:active {
+    color: rgb(184, 184, 184);
+    background-color: rgb(236, 236, 236);
+    cursor: default;
+}

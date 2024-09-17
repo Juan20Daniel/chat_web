@@ -1,0 +1,62 @@
+.load-image-profile {
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.load-image-profile .box-img-user {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20rem;
+}
+.load-image-profile .box-img-user input {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+}
+.load-image-profile .box-img-user .select-img,
+.load-image-profile .box-img-user .icon-user,
+.load-image-profile .box-img-user .img-user {
+    width: 20rem;
+    height: 20rem;
+    object-fit: contain;
+    cursor: pointer;
+}
+.load-image-profile .box-img-user .img-user {
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: default;
+}
+.load-image-profile .box-img-user .save-img,
+.load-image-profile .box-img-user .clear-input-img {
+    position: absolute;
+    right: 9rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+}
+.load-image-profile .box-img-user .clear-input-img:hover {
+    background-color: var(--light-gray);
+}
+.load-image-profile .box-img-user .clear-input-img:active {
+    background: none;
+}
+.load-image-profile .box-img-user .save-img {
+    right: calc(50% - 4rem);
+    bottom: -1rem;
+    width: 8rem;
+    background: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem var(--black-transparent);
+}
+.load-image-profile .box-img-user .save-img:active {
+background: var(--light-gray);
+}

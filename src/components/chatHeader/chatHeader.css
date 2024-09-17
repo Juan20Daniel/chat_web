@@ -1,0 +1,77 @@
+.chat .main .header {
+    background-color: var(--white);
+    height: 8rem;
+    box-shadow: 0 0.1rem 0.5rem var(--black-transparent);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.chat .main .header .box-btn-back,
+.chat .main .header .box-user-active {
+    align-self: center;
+    display: flex;
+    gap: 1rem;
+}
+.chat .main .header .box-btn-back .btn-back {
+    border: 0.1rem solid var(--white);
+    height: 3rem;
+    border-radius: 0.5rem;
+    background: none;
+    cursor: pointer;
+}
+.chat .main .header .box-btn-back .btn-back:active {
+    border: 0.1rem solid #dadada;
+}
+.chat .main .header .box-user-active .box-avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+}
+.chat .main .header .box-btn-back img,
+.chat .main .header .box-user-active img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 5rem;
+}
+.chat .main .header .box-btn-back span {
+    font-size: 1.8rem;
+    align-self: center;
+}
+.chat .main .header .box-user-active {
+    justify-self: flex-end;
+}
+.chat .main .header .box-user-active .info {
+    align-self: center;
+    width: 8.5rem;
+}
+.chat .main .header .box-user-active .info .name {
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    font-weight: var(--inter-bold);
+}
+.chat .main .header .box-user-active .info .status {
+    font-size: 1rem;
+    color: var(--green)
+}
+.chat .main .chat-content {
+    padding: 1rem;
+    height: calc(100vh - 14rem);
+    overflow: auto;
+}
+@media(min-width: 900px) {
+    .chat .main .header {
+        padding: 1rem 4rem;
+    }  
+    .chat .main .chat-content {
+        padding: 1rem 4rem;
+    }
+}
+@media(min-width: 1200px) {
+    .chat .main .header {
+        padding: 1rem 8rem;
+    }
+    .chat .main .chat-content {
+        padding: 1rem 8rem;
+    }
+}

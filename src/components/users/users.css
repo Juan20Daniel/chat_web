@@ -1,0 +1,12 @@
+.box-users {
+    width: 100%;
+    height: calc(100vh - 13.7rem);
+    overflow-y: auto;
+}
+.box-users::-webkit-scrollbar {
+    display: none;
+}
+.box-users .box-loader-users {
+    display: flex;
+    height: 100%;
+}

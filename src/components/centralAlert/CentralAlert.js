@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import './centralAlert.css';
-import { Button } from '../button/Button';
+import Button from '../button/Button';
 import ilustrationError from '../../assets/ilustrationError.png';
 import ilustrationQuestion from '../../assets/ilustrationQuestion.png';
 import ilustrationSuccess from '../../assets/ilustrationSuccess.png';
 import CentralAlertContext from '../../context/alertContext/CentralAlertContext';
+import './centralAlert.css';
 const ilustrations = {
   error:ilustrationError,
   confirm:ilustrationQuestion,

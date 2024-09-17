@@ -1,0 +1,11 @@
+.box-input-profile {
+    height: 3rem;
+    display: flex;
+}
+.box-input-profile input {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    outline: none;
+    border: none;
+}

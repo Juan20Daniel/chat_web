@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'; 
 import { Form } from '../../components/form/Form';
 import { InputGroup } from '../../components/inputGroup/InputGroup';
-import { Button } from '../../components/button/Button';
+import Button from '../../components/button/Button';
 import { IconEmail, IconPassword } from '../../assets/IconsSvg';
 import { LoginViewModel } from './LoginViewModel';
 import './login.css';

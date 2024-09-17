@@ -1,10 +1,9 @@
-import Spinner from '../spinner/Spinner'
+import Loader from '../loader/Loader';
 import './loadPage.css';
 const LoadPage = () => {
   return (
     <div className='load-page'>
-        <Spinner size={40} color='#1E611A' />
-        <span className='text'>Cargando...</span>
+      <Loader message='Cargando...' />
     </div>
   );
 }

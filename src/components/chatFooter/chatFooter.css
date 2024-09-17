@@ -1,0 +1,54 @@
+.chat .footer {
+    background-color: var(--green);
+    box-shadow: 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.555);
+}
+.chat .footer .box-input {
+    margin: 1rem 1rem;
+    background-color: var(--white);
+    display: flex;
+    border-radius: 1.5rem;
+}
+.chat .footer .box-input input {
+    border: none;
+    flex: 1;
+    border-radius: 1.5rem;
+    height: 4rem;
+    margin: auto;
+    outline: none;
+    padding: 0 1rem;
+    border-right: 0.1rem solid var(--light-grayish-white);
+    font-size: 1.6rem;
+}
+.chat .footer .box-input .box-icon-send {
+    width: 5rem;
+    height: 4rem;
+    border-radius: 0 1.5rem 1.5rem 0;
+    border: none;
+    cursor: pointer;
+    background-color: var(--white);
+}
+.chat .footer .box-input .box-icon-send img {
+    width: 3rem;
+    height: 3rem;
+    transform: rotate(-30deg);
+}
+.chat .footer .box-input .box-icon-send:active > img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+@media(min-width: 900px) {
+    .chat .footer .box-input {
+        margin: 1rem 4rem;
+    }
+    .chat .footer .box-input .box-icon-send {
+        width: 7rem;
+    }
+}
+@media(min-width: 1200px) {
+    .chat .footer .box-input {
+        margin: 1rem 8rem;
+    }
+    .chat .footer .box-input .box-icon-send {
+        width: 9rem;
+    }
+}

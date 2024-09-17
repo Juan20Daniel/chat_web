@@ -5,15 +5,23 @@ const colors = {
   error:'color-error',
   confirm:'color-confirm',
   success:'color-success',
-  cancel:'color-cancel'
+  cancel:'color-cancel',
 }
-export const Button = ({ type, value, btnColor, colorSpinner, action, isLoading }) => {
+const Button = ({ type, value, btnColor, colorSpinner, action, isLoading=false, disable=false }) => {
   const btnAction = () => {
+    if(disable) return;
     if(action) action();
   }
   return (
-    <button type={type} className={`btn-submit ${colors[btnColor]}`} onClick={() => btnAction()}>
+    <button 
+      type={type} 
+      className={
+        `btn-submit ${colors[btnColor]} ${disable && 'disable-btn'}`
+      } 
+      onClick={() => btnAction()}
+    >
       {isLoading ? <Spinner size={20} color={colorSpinner} /> : value}
     </button>
-  )
+  );
 }
+export default Button;

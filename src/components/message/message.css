@@ -1,0 +1,48 @@
+.box-message {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1rem;
+    display: flex;
+}
+.box-message .message {
+    display: inline-block;
+    padding: 1rem;
+    margin: 0 0 0 auto;
+    width: auto;
+    max-width: 28rem;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 1rem 0 1rem 1rem;
+}
+.box-message .my-message {
+    margin: 0;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 0 1rem 1rem 1rem;
+}
+.box-message .message .text {
+    font-weight: 300;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    word-wrap: break-word;
+}
+@media(min-width:500px) {
+    .box-message .message {
+        max-width: 40rem;
+    }
+}
+@media(min-width:700px) {
+    .box-message .message {
+        max-width: 28rem;
+    }
+}
+@media(min-width:813px) {
+    .box-message .message {
+        max-width: 40rem;
+    }
+}
+@media(min-width:1003px) {
+    .box-message .message {
+        max-width: 50rem;
+    }
+}

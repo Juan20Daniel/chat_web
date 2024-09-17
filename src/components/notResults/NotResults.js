@@ -1,7 +1,7 @@
-import './notResults.css';
+import Button from '../button/Button';
 import ilustrationUsers from '../../assets/ilustrationUsers.png';
 import ilustrationServerDown from '../../assets/ilustrationServerDown.png';
-import { Button } from '../button/Button';
+import './notResults.css';
 const ilustrations = {
   users:ilustrationUsers,
   serverDown:ilustrationServerDown

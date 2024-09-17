@@ -1,0 +1,23 @@
+.box-not-messages {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-not-messages .box-center {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.box-not-messages .box-center .ilustration {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+.box-not-messages .box-center .title {
+    font-size: 1.5rem;
+}
