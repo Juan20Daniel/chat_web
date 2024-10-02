@@ -15,7 +15,12 @@ export const InputChangePassword = ({state, setState, exp}) => {
             <div className='box-position'>
                 <input type={showPass ? 'text' : 'password' } placeholder='Nueva contraseña' onChange={handleChange} />
                 {state.value !== '' &&
-                    <button className='btn-show-pass' title='Ver contraseña' onClick={() => setShowPass(!showPass)}>
+                    <button 
+                        className='btn-show-pass'
+                        title='Ver contraseña'
+                        onClick={() => setShowPass(!showPass)}
+                        type='button'
+                    >
                         {showPass 
                             ? <IconShowPass size={17} />
                             : <IconNotShowPass size={17} />
