@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState } from 'react';
 import { IconX } from '../../assets/IconsSvg';
 import iconUser from '../../assets/iconUserBig.png';
 import './loadImageProfile.css';
@@ -6,15 +6,6 @@ import './loadImageProfile.css';
 const LoadImageProfile = ({user, image, setImage}) => {
     const [ imgToSave, setImgToSave ] = useState(null);
     const [ inputValue, setInputValue ] = useState('');
-    const [ showBtnAction, setShowBtnAction ] = useState({visible:false, text:'', action:null});
-    useLayoutEffect(() => {
-        if(!image) return;
-        setShowBtnAction({
-            visible:true, 
-            text:image !== user.avatar ? 'Guardar' : 'Eliminar', 
-            action:image !== user.avatar ? 'save' : 'delete'});
-        // if(image !== user.avatar) setShowBtnAction(true);
-    },[user, image]);
     const handleImage = (e) => {
         const file = e.target.files[0];
         setImgToSave(file);
@@ -26,11 +17,7 @@ const LoadImageProfile = ({user, image, setImage}) => {
             setImage(reader.result);
         }
     }
-    const action = () => {
-        console.log(showBtnAction)
-    }
     const clearInput = () => {
-        setShowBtnAction({visible:false, text:'', action:null});
         setImage(null);
         setInputValue('');
         setImgToSave(null);
@@ -56,11 +43,6 @@ const LoadImageProfile = ({user, image, setImage}) => {
                             <IconX size={13} />
                         </button>
                     </>
-                }
-                {showBtnAction.visible && 
-                    <button type='button' className='save-img' onClick={() => action()}>
-                        {showBtnAction.text}
-                    </button>
                 }
             </div>
         </div>

@@ -8,7 +8,7 @@ import ChatHeader from '../../components/chatHeader/ChatHeader';
 import ChatFooter from '../../components/chatFooter/ChatFooter';
 import CentralAlertContext from '../../context/alertContext/CentralAlertContext';
 import NotMessage from '../../components/notMessages/NotMessages';
-import Message from '../../components/message/Message';
+// import Message from '../../components/message/Message';
 import './chatZone.css';
 
 const ChatZone = () => {
@@ -44,9 +44,9 @@ const ChatZone = () => {
                         <ChatHeader />
                         {!loadMessage ?
                             <div className='chat-content' id='messages'>  
-                                {messages.map(message => (
+                                {/* {messages.map(message => (
                                     <Message key={message._id} data={message} />
-                                ))}
+                                ))} */}
                                 {messages.length === 0 && <NotMessage />}
                             </div>
                             :

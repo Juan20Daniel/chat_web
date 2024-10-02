@@ -1,6 +1,13 @@
 .box-input-profile {
     height: 3rem;
     display: flex;
+    margin-right: 3rem;
+}
+.box-input-profile .box-icon {
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .box-input-profile input {
     margin: auto;

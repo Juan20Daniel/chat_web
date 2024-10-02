@@ -16,7 +16,10 @@ const Profile = () => (
             className='img-profile'
             placeholder={<div className='loading'/>}
         />
-        <h1 className="fullname">{decodeToken(getTokenLocalStorage()).fullname}</h1>    
+        <h1 className="fullname">{
+            decodeToken(getTokenLocalStorage()).fullname
+        }
+        </h1>    
         <div className='box-menu-point'>
             <MenuPoint options={['Modificar', 'Cerrar sesión']} />
         </div>

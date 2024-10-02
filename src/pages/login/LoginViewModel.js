@@ -15,6 +15,7 @@ export const LoginViewModel = () => {
         try {
             setIsLoading(true);
             const result = await axiosInstance.get(`/auth/${email.valueCamp}/${password.valueCamp}`);
+            console.log(result);
             saveTokenLocalStorage(result.token);
             resetInputs();
             setIsLoading(false);

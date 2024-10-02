@@ -20,7 +20,7 @@ const Users = () => {
                             data={user}
                         />
                     ))}
-                    {users?.length === 0 && 
+                    {users?.length === 1 && 
                         <NotResults 
                             ilustration='users'
                             message='No hay Usuarios'
