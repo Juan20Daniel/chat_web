@@ -1,6 +1,7 @@
 import { useState, useLayoutEffect, useRef, useEffect, useCallback } from 'react';
 import { decodeToken } from '../../helpers/decodeToken';
 import { getTokenLocalStorage } from '../../data/local/LocalStorage';
+import axiosInstance from '../../data/remote/axios.instance';
 import LoadImageProfile from "../../components/loadImageProfile/LoadImageProfile";
 import Section from "../../components/section/Section";
 import Navbar from "../../components/navbar/Navbar";
@@ -13,6 +14,8 @@ const EditProfile = () => {
   const [ email, setEmail ] = useState({value:'', camp:'email', valid:true});
   const [ password, setPassword ] = useState({value:'', camp:'password', valid:true});
   const [ image, setImage ] = useState(null);
+  const [ imgfile, setImgFile ] = useState(null);
+  const [ isLoading, setIsLoading ] = useState(false);
   const [ btnEdith, setBtnEdit ] = useState(true);
   const userRef = useRef(null);
   useLayoutEffect(() => {
@@ -22,6 +25,7 @@ const EditProfile = () => {
     setEmail(preState => ({...preState, value:userRef.current.email}));
     setImage(userRef.current.avatar);
   },[]);
+  //Función para verificar si se habilita el botón de enviar
   const compareData = useCallback(() => {
     if(userRef.current.email !== email.value) return true;
     if(userRef.current.fullname !== fullname.value) return true;
@@ -29,28 +33,43 @@ const EditProfile = () => {
     if(password.value !== '') return true;
     return false;
   },[email.value,fullname.value,image, password.value]);
+  //Función para verificar si los campos editados son validos
   const valid = useCallback(() => {
     if(email.valid && fullname.valid && password.valid) return true;
     return false;
-  },[email.valid,fullname.valid, password.valid])
+  },[email.valid,fullname.valid, password.valid]);
   useEffect(() => {
     if(compareData() && valid()) return setBtnEdit(false);
     setBtnEdit(true);
   },[compareData, valid]);
-  const save = e => {
+  const save = async e => {
     e.preventDefault();
-    compareData();
     if(btnEdith) return;
-    console.log('saveing...');
+    const formData = new FormData();
+    if(userRef.current.avatar !== image) formData.append('image', imgfile);
+    if(userRef.current.email !== email.value) formData.append('email', email.value);
+    if(userRef.current.fullname !== fullname.value) formData.append('fullname', fullname.value);
+    if(password.value !== '') formData.append('email', email.value);
+    try {
+      setIsLoading(true);
+      const response = await axiosInstance.put('/users',formData, {
+        'Content-Type':'multipart/form-data'
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   }
   return (
     <Section>
       <Navbar title='Editar perfil' />
       <form onSubmit={save}>
         <LoadImageProfile
-          user={userRef.current}
           image={image}
           setImage={setImage}
+          setImgFile={setImgFile}
         />
         <InputProfile
           state={fullname}
@@ -77,6 +96,8 @@ const EditProfile = () => {
             value='Guardar'
             btnColor='success'
             disable={btnEdith}
+            colorSpinner='white'
+            isLoading={isLoading}
           />
         </div>
       </form>

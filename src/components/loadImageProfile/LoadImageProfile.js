@@ -3,12 +3,11 @@ import { IconX } from '../../assets/IconsSvg';
 import iconUser from '../../assets/iconUserBig.png';
 import './loadImageProfile.css';
 
-const LoadImageProfile = ({user, image, setImage}) => {
-    const [ imgToSave, setImgToSave ] = useState(null);
+const LoadImageProfile = ({ image, setImage, setImgFile}) => {
     const [ inputValue, setInputValue ] = useState('');
     const handleImage = (e) => {
         const file = e.target.files[0];
-        setImgToSave(file);
+        setImgFile(file);
         if(!file) return;
         setInputValue(e.target.value)
         const reader = new FileReader();
@@ -20,7 +19,7 @@ const LoadImageProfile = ({user, image, setImage}) => {
     const clearInput = () => {
         setImage(null);
         setInputValue('');
-        setImgToSave(null);
+        setImgFile(null);
     }
     return (
         <div className='load-image-profile'>

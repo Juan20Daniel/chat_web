@@ -9,7 +9,7 @@ import './users.css';
 const idUser = decodeToken(getTokenLocalStorage()).uid;
 const Users = () => {
     const { users, loadingUsers } = useContext(ChatContext);
-    console.log(users)
+    console.log(decodeToken(getTokenLocalStorage()).uid)
     return (
         <div className='box-users'>
             {!loadingUsers ?
