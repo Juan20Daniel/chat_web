@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect, useRef, useEffect, useCallback } from 'react';
 import { decodeToken } from '../../helpers/decodeToken';
-import { getTokenLocalStorage } from '../../data/local/LocalStorage';
+import { getTokenLocalStorage, saveTokenLocalStorage } from '../../data/local/LocalStorage';
 import axiosInstance from '../../data/remote/axios.instance';
 import LoadImageProfile from "../../components/loadImageProfile/LoadImageProfile";
 import Section from "../../components/section/Section";
@@ -18,12 +18,15 @@ const EditProfile = () => {
   const [ isLoading, setIsLoading ] = useState(false);
   const [ btnEdith, setBtnEdit ] = useState(true);
   const userRef = useRef(null);
-  useLayoutEffect(() => {
+  const loadUser = useCallback(() => {
     userRef.current = decodeToken(getTokenLocalStorage());
     setFullname(preState => ({...preState, value:userRef.current.fullname}));
     setEmail(preState => ({...preState, value:userRef.current.email}));
     setImage(userRef.current.image);
   },[]);
+  useLayoutEffect(() => {
+    loadUser();
+  },[loadUser]);
   //Función para verificar si se habilita el botón de enviar
   const compareData = useCallback(() => {
     if(userRef.current.email !== email.value) return true;
@@ -45,7 +48,7 @@ const EditProfile = () => {
     e.preventDefault();
     if(btnEdith) return;
     const formData = new FormData();
-    if(userRef.current.avatar !== image) formData.append('image', imgfile);
+    if(userRef.current.image !== image) formData.append('image', imgfile);
     if(userRef.current.email !== email.value) formData.append('email', email.value);
     if(userRef.current.fullname !== fullname.value) formData.append('fullname', fullname.value);
     if(password.value !== '') formData.append('email', email.value);
@@ -54,7 +57,10 @@ const EditProfile = () => {
       const response = await axiosInstance.put('/users',formData, {
         'Content-Type':'multipart/form-data'
       });
-      console.log(response);
+      saveTokenLocalStorage(response.token);
+      loadUser();
+      if(compareData() && valid()) return setBtnEdit(false);
+      setBtnEdit(true);
     } catch (error) {
       console.log(error);
     } finally {
