@@ -24,6 +24,9 @@ export const ChatProvider = ({children}) => {
         }
     },[windowWidth]);
     useEffect(() => {
+        console.log(messages);
+    },[messages]);
+    useEffect(() => {
         if(!messages) return;
         scrollBottom();
     },[messages]);

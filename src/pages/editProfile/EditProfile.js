@@ -20,16 +20,15 @@ const EditProfile = () => {
   const userRef = useRef(null);
   useLayoutEffect(() => {
     userRef.current = decodeToken(getTokenLocalStorage());
-    userRef.current.avatar='https://s3.amazonaws.com/cdn.wp.m4ecmx/wp-content/uploads/2023/10/14123804/ias-generadoras-de-imagenes.jpg';
     setFullname(preState => ({...preState, value:userRef.current.fullname}));
     setEmail(preState => ({...preState, value:userRef.current.email}));
-    setImage(userRef.current.avatar);
+    setImage(userRef.current.image);
   },[]);
   //Función para verificar si se habilita el botón de enviar
   const compareData = useCallback(() => {
     if(userRef.current.email !== email.value) return true;
     if(userRef.current.fullname !== fullname.value) return true;
-    if(userRef.current.avatar !== image) return true;
+    if(userRef.current.image !== image) return true;
     if(password.value !== '') return true;
     return false;
   },[email.value,fullname.value,image, password.value]);
