@@ -31,10 +31,10 @@ const EditProfile = () => {
   const compareData = useCallback(() => {
     if(userRef.current.email !== email.value) return true;
     if(userRef.current.fullname !== fullname.value) return true;
-    if(userRef.current.image !== image) return true;
     if(password.value !== '') return true;
+    if(imgfile) return true;
     return false;
-  },[email.value,fullname.value,image, password.value]);
+  },[email.value,fullname.value,imgfile, password.value]);
   //Función para verificar si los campos editados son validos
   const valid = useCallback(() => {
     if(email.valid && fullname.valid && password.valid) return true;
@@ -44,7 +44,7 @@ const EditProfile = () => {
     if(compareData() && valid()) return setBtnEdit(false);
     setBtnEdit(true);
   },[compareData, valid]);
-  const save = async e => {
+  const update = async e => {
     e.preventDefault();
     if(btnEdith) return;
     const formData = new FormData();
@@ -70,9 +70,11 @@ const EditProfile = () => {
   return (
     <Section>
       <Navbar title='Editar perfil' />
-      <form onSubmit={save}>
+      <form onSubmit={update}>
         <LoadImageProfile
           image={image}
+          imgUser={userRef.current}
+          imgfile={imgfile}
           setImage={setImage}
           setImgFile={setImgFile}
         />

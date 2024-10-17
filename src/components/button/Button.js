@@ -6,6 +6,7 @@ const colors = {
   confirm:'color-confirm',
   success:'color-success',
   cancel:'color-cancel',
+  normal:'color-normal'
 }
 const Button = ({ type, value, btnColor, colorSpinner, action, isLoading=false, disable=false }) => {
   const btnAction = () => {

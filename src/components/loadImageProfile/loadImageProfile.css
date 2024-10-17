@@ -11,18 +11,44 @@
     width: 100%;
     height: 20rem;
 }
-.load-image-profile .box-img-user input {
+.load-image-profile .box-btn-load-image {
     position: absolute;
+    right: 6.5rem;
+    bottom: calc(50% - 2.5rem);
     border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+}
+.load-image-profile .box-img-user .box-btn-load-image label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 0.5rem var(--box-shadown);
+}
+.load-image-profile .box-img-user .box-btn-load-image label img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+}
+.load-image-profile .box-img-user .box-btn-load-image input {
     opacity: 0;
 }
-.load-image-profile .box-img-user .select-img,
+.load-image-profile .box-button-remove {
+    position: absolute;
+    bottom: -0.5rem;
+    width: 9rem;
+    height: 3rem;
+    box-shadow: 0 0 0.5rem var(--box-shadown);
+    border-radius: 1rem;
+}
 .load-image-profile .box-img-user .icon-user,
 .load-image-profile .box-img-user .img-user {
     width: 20rem;
     height: 20rem;
     object-fit: contain;
-    cursor: pointer;
 }
 .load-image-profile .box-img-user .img-user {
     border-radius: 50%;

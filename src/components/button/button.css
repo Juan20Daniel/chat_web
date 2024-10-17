@@ -42,3 +42,10 @@
     background-color: rgb(236, 236, 236);
     cursor: default;
 }
+.color-normal {
+    color: var(--black);
+    background: var(--white);
+}
+.color-normal:active {
+    background-color: rgb(236, 236, 236);
+}
